@@ -1,0 +1,42 @@
+﻿<Window x:Class="Customers.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Customers.Views" 
+        mc:Ignorable="d"
+        Title="Customer Base" Height="450" Width="810" MinHeight="200" MinWidth="600" Background="Snow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="Customers" AlternatingRowBackground="LightGray"
+                  AutoGenerateColumns="False" VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Width="auto" Binding="{Binding Path=FirstName}" />
+                <DataGridTextColumn Header="Last Name" Width="auto" Binding="{Binding Path=LastName}" />
+                <DataGridTextColumn Header="Street Name" Width="auto" Binding="{Binding Path=StreetName}" />
+                <DataGridTextColumn Header="House Number" Width="auto" Binding="{Binding Path=HouseNumber}" />
+                <DataGridTextColumn Header="Apartment Number" Width="auto" Binding="{Binding Path=ApartmentNumber}" />
+                <DataGridTextColumn Header="Postal Code" Width="auto" Binding="{Binding Path=PostalCode}" />
+                <DataGridTextColumn Header="Town" Width="auto" Binding="{Binding Path=Town}" />
+                <DataGridTextColumn Header="Phone Number" Width="auto" Binding="{Binding Path=PhoneNumber}" />
+                <DataGridTextColumn Header="Date of Birth" Width="auto" Binding="{Binding Path=DateOfBirth}" />
+                <DataGridTextColumn Header="Age" Width="auto" Binding="{Binding Path=Age}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="SaveToXML" Content="Save" Grid.Column="1" Grid.Row="4" Width="50" HorizontalAlignment="Left"/>
+        <Button x:Name="CancelData" Content="Cancel" Grid.Column="1" Grid.Row="4" Width="50" HorizontalAlignment="Left" Margin="80,0,0,0"/>
+    </Grid>
+</Window>
